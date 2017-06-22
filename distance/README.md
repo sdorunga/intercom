@@ -17,17 +17,19 @@ and that the JSON is parseable) because I'm assuming that the customer details
 human involved that can read the error message and correct the offending entry.
 
 - The CustomerFinder is the entry point to the script and puts together the other
-objecs in order to find the customers that match the constraints
+objecs in order to find the customers that match the constraints. There is an
+option parser which I added mostly for convenience as I'm not certain which way
+this script is meant to be used.
 
 # Usage
 
 You can try out the code from the console. Run
 
-`ruby lib/customer_finder.rb <office_lat> <office_long> <user_file_path> <distance_in_km>`
+`ruby lib/customer_finder.rb --lat <office_lat> --lon <office_long> --path <user_file_path> --distance <distance_in_km>`
 
 In the case of the specified example you can run:
 
-`ruby ./lib/customer_finder.rb 53.3393 -6.2576841 spec/feature/users.txt 100`
+`ruby ./lib/customer_finder.rb --lat 53.3393 --lon -6.2576841 --path spec/feature/users.txt --distance 100`
 
 This will output a list of customer ids next to customer names that fits the
 constraints.
